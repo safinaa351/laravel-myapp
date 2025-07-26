@@ -12,7 +12,7 @@ Route::get('/todolist', function () {
         ['id' => 2, 'name' => 'Clean the house', 'completed' => true],
         ['id' => 3, 'name' => 'Finish project', 'completed' => false],
     ];
-    return view('todolist.index', ["greeting" => "Welcome to the To Do List", "todolist" => $todolist]);
+    return view('todolist.index', ["mytasks" => $todolist]);
 });
 
 Route::get('/todolist/create', function () {
@@ -20,10 +20,5 @@ Route::get('/todolist/create', function () {
 });
 
 Route::get('/todolist/{id}', function ($id) {
-    $todolist = [
-        ['id' => 1, 'name' => 'Buy groceries', 'completed' => false],
-        ['id' => 2, 'name' => 'Clean the house', 'completed' => true],
-        ['id' => 3, 'name' => 'Finish project', 'completed' => false],
-    ];
     return view('todolist.show', ["id" => $id]);
 });

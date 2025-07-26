@@ -2,7 +2,7 @@
     <h2>Welcome Back</h2>
 
     <ul>
-        @foreach($todolist as $task)
+        @foreach($mytasks as $task)
             <li>
                 <x-card href="/todolist/{{ $task['id'] }}">
                     <h3>{{ $task['name'] }}</h3>
