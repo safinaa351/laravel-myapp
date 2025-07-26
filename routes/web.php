@@ -15,6 +15,10 @@ Route::get('/todolist', function () {
     return view('todolist.index', ["greeting" => "Welcome to the To Do List", "todolist" => $todolist]);
 });
 
+Route::get('/todolist/create', function () {
+    return view('todolist.create');
+});
+
 Route::get('/todolist/{id}', function ($id) {
     $todolist = [
         ['id' => 1, 'name' => 'Buy groceries', 'completed' => false],

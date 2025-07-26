@@ -4,8 +4,9 @@
     <ul>
         @foreach($todolist as $task)
             <li>
-                <p>{{ $task['name'] }}</p>
-                <a href="/todolist/ {{ $task['id']}}">View Details</a>
+                <x-card href="/todolist/{{ $task['id'] }}">
+                    <h3>{{ $task['name'] }}</h3>
+                </x-card>
             </li>
         @endforeach
     </ul>
